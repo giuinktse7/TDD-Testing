@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Learning TDD</string>
+
+    <string name="send_suggestion">Send suggestion</string>
+    <string name="mark_location">Mark location</string>
+</resources>
