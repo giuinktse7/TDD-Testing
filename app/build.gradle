@@ -56,4 +56,10 @@ dependencies {
             exclude module: 'recyclerview-v7'
         }
 
+    androidTestCompile 'com.squareup.assertj:assertj-android:1.1.1'
+
+    // https://mvnrepository.com/artifact/org.nutz/luajava
+    // Add support for lua
+    compile group: 'org.nutz', name: 'luajava', version: '2.0.1-beta'
+
 }
