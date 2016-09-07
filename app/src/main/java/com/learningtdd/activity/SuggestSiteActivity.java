@@ -19,7 +19,6 @@ public class SuggestSiteActivity extends AppCompatActivity {
 		mSiteImage = (ImageView) findViewById(R.id.activity_suggest_image);
 		mSiteImage.setOnClickListener(v -> {
 			mSiteImage.setImageResource(R.drawable.bulbasaur);
-			System.out.println("BAM");
 		});
 	}
 }

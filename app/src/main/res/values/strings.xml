@@ -4,4 +4,12 @@
     <string name="send_suggestion">Send suggestion</string>
     <string name="mark_location">Mark location</string>
     <string name="register">Join in!</string>
+
+
+    <string name="account_hint">Username</string>
+    <string name="password_hint">Password</string>
+
+    <string name="new_account_encouragement_message">Sign up now to become our very first user! (Please?)</string>
+
+
 </resources>
