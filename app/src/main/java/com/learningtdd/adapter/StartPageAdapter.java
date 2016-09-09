@@ -4,71 +4,43 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.learningtdd.activity.StartActivity;
+
 import java.util.List;
 
 public class StartPageAdapter extends FragmentPagerAdapter {
 
-	public static int pos = 0;
+	private int mPos = 0;
 
-	private List<Fragment> myFragments;
+	private List<Fragment> mFragments;
 
-	public StartPageAdapter(FragmentManager fm, List<Fragment> myFrags) {
-		super(fm);
-		myFragments = myFrags;
+	public StartPageAdapter(FragmentManager fragmentManager, List<Fragment> fragments) {
+		super(fragmentManager);
+        mFragments = fragments;
 	}
 
 	@Override
 	public Fragment getItem(int position) {
-
-		return myFragments.get(position);
-
+		return mFragments.get(position);
 	}
 
 	@Override
 	public int getCount() {
-
-		return myFragments.size();
+		return mFragments.size();
 	}
 
 	@Override
 	public CharSequence getPageTitle(int position) {
-
 		setPos(position);
 
-		String pageTitle = "";
-
-		switch(pos)
-		{
-			case 0:
-				pageTitle = "page 1";
-				break;
-			case 1:
-				pageTitle = "page 2";
-				break;
-			case 2:
-				pageTitle = "page 3";
-				break;
-			case 3:
-				pageTitle = "page 4";
-				break;
-			case 4:
-				pageTitle = "page 5";
-				break;
-			case 5:
-				pageTitle = "page 6";
-				break;
-			case 6:
-				pageTitle = "page 7";
-				break;
-		}
-		return pageTitle;
+		return mFragments.get(position).getArguments().getString(StartActivity.PAGE_TITLE);
 	}
 
-	public static int getPos() {
-		return pos;
+	public int getPos() {
+		return mPos;
 	}
 
-	public static void setPos(int pos) {
-		StartPageAdapter.pos = pos;
+	public void setPos(int pos) {
+		mPos = pos;
 	}
 }
