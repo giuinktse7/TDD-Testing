@@ -16,9 +16,6 @@ public class StartActivity extends FragmentActivity {
 
     public static final String PAGE_TITLE = "TITLE";
 
-	private static final String LOGIN_PAGE_TITLE = Resources.getSystem().getString(R.string.login);
-	private static final String CREATE_ACCOUNT_PAGE_TITLE = Resources.getSystem().getString(R.string.new_account);
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -26,8 +23,8 @@ public class StartActivity extends FragmentActivity {
 
 		StartPageAdapter adapter = new StartPageAdapter(getSupportFragmentManager(),
 				Arrays.asList(
-						LoginFragment.newInstance(LOGIN_PAGE_TITLE),
-						NewAccountFragment.newInstance(CREATE_ACCOUNT_PAGE_TITLE)
+						LoginFragment.newInstance(getString(R.string.login)),
+						NewAccountFragment.newInstance(getString(R.string.new_account))
 				));
 
 		ViewPager viewPager = (ViewPager) findViewById(R.id.start_activity_view_pager);
