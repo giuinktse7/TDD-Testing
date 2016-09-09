@@ -1,4 +1,5 @@
 package com.learningtdd.activity;
+import android.content.res.Resources;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -15,8 +16,8 @@ public class StartActivity extends FragmentActivity {
 
     public static final String PAGE_TITLE = "TITLE";
 
-	private static final String LOGIN_PAGE_TITLE = "Login";
-	private static final String CREATE_ACCOUNT_PAGE_TITLE = "Create account";
+	private static final String LOGIN_PAGE_TITLE = Resources.getSystem().getString(R.string.login);
+	private static final String CREATE_ACCOUNT_PAGE_TITLE = Resources.getSystem().getString(R.string.new_account);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
