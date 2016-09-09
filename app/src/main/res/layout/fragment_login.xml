@@ -5,42 +5,25 @@
              tools:context="fragment.LoginFragment"
     android:background="@color/colorPrimary">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginTop="@dimen/space_large"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:orientation="vertical"
-        android:id="@+id/fragment_login_linear_layout_wrap"
-        android:layout_marginBottom="@dimen/space_huge">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/text_size_huge"
-            android:text="Testing..."
-            android:id="@+id/textView"/>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:alpha="0.8"
-            android:id="@+id/imageView"
-            android:src="@drawable/bulbasaur"
-            android:layout_below="@+id/textView"/>
-
-    </LinearLayout>
+        android:alpha="0.8"
+        android:id="@+id/imageView"
+        android:src="@drawable/bulbasaur"/>
 
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_huge"
         android:layout_marginStart="@dimen/space_normal"
         android:layout_marginEnd="@dimen/space_normal"
         android:hint="@string/account_hint"
         android:id="@+id/fragment_login_txt_name"
-        android:layout_below="@+id/fragment_login_linear_layout_wrap"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"/>
 
     <EditText

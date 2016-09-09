@@ -5,33 +5,14 @@
              tools:context="fragment.LoginFragment"
              android:background="@color/colorPrimary">
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_large"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical"
-        android:id="@+id/linearLayout">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="@dimen/text_size_huge"
-            android:text="Testing"
-            android:id="@+id/textView"/>
-
         <ImageView
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="80dp"
+            android:layout_marginTop="@dimen/space_large"
+            android:layout_centerHorizontal="true"
             android:alpha="0.8"
             android:id="@+id/imageView"
-            android:src="@drawable/bulbasaur"
-            android:layout_gravity="center"/>
-
-    </LinearLayout>
+            android:src="@drawable/bulbasaur"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -40,7 +21,7 @@
         android:textSize="@dimen/text_size_normal"
         android:text="@string/new_account_encouragement_message"
         android:id="@+id/new_account_activity_encouragement_text"
-        android:layout_below="@+id/linearLayout"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"/>
 
     <EditText
