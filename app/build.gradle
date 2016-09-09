@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.0"
+    buildToolsVersion "24.0.2"
 
     defaultConfig {
         applicationId "com.learningtdd"
@@ -33,7 +33,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile "junit:junit:$rootProject.ext.junitVersion"
 
-    androidTestCompile 'com.android.support:support-annotations:24.2.0'
+    androidTestCompile "com.android.support:support-annotations:${supportLibVersion}"
 
     androidTestCompile 'com.android.support.test:runner:0.4'
     // Set this dependency to use JUnit 4 rules
@@ -57,6 +57,10 @@ dependencies {
 
     androidTestCompile 'com.squareup.assertj:assertj-android:1.1.1'
 
-    compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.android.support:support-v4:24.2.0'
+    compile "com.android.support:support-v4:${supportLibVersion}"
+    compile "com.android.support:appcompat-v7:${supportLibVersion}"
+    compile "com.android.support:design:${supportLibVersion}"
+    compile "com.android.support:recyclerview-v7:${supportLibVersion}"
+
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 }
