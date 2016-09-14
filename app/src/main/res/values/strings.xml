@@ -11,4 +11,6 @@
     <string name="new_account_encouragement_message">Sign up now to become our very first user! (Please?)</string>
 
 
+    <string name="facebook_app_id">1751631098438278</string>
+    <string name="fb_login_protocol_scheme">fb1751631098438278</string>
 </resources>

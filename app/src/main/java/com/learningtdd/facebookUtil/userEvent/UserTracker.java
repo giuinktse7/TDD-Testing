@@ -47,6 +47,7 @@ public class UserTracker {
     }
 
     public void addListener(int fragmentId, UserEvent event, UserEventListener listener) {
+
         if (mListenerGroups.get(fragmentId) == null)
             mListenerGroups.put(fragmentId, new ListenerGroup());
 
@@ -75,7 +76,6 @@ public class UserTracker {
 
         public void addListener(UserEvent event, UserEventListener listener) {
             mListeners.get(event).add(listener);
-            Log.d("ADDED", "Added listener.");
         }
 
         public void notifyListeners(UserEvent event) {

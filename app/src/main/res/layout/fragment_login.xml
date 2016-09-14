@@ -65,9 +65,29 @@
         android:layout_marginStart="@dimen/space_normal"
         android:layout_marginEnd="@dimen/space_normal"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:id="@+id/login_activity_progress_bar"
+        android:id="@+id/login_fragment_progress_bar"
         android:layout_below="@+id/login_fragment_txt_progress_phrases"
         android:layout_centerHorizontal="true"
         android:max="500"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:id="@+id/login_fragment_txt_or"
+        android:textSize="@dimen/text_size_emphasize"
+        android:text="- OR -"
+        android:layout_below="@id/login_fragment_progress_bar"/>
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/fragment_login_login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/login_fragment_txt_or"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp" />
 
 </RelativeLayout>

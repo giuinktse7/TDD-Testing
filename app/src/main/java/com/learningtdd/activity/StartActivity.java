@@ -1,14 +1,17 @@
 package com.learningtdd.activity;
-import android.content.res.Resources;
+
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 import com.learningtdd.R;
 import com.learningtdd.adapter.StartPageAdapter;
 import com.learningtdd.fragment.LoginFragment;
 import com.learningtdd.fragment.NewAccountFragment;
+import com.learningtdd.facebookUtil.userEvent.UserTracker;
 
 import java.util.Arrays;
 
@@ -20,6 +23,8 @@ public class StartActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_start);
+
+		initializeFbDataTracking();
 
 		StartPageAdapter adapter = new StartPageAdapter(getSupportFragmentManager(),
 				Arrays.asList(
@@ -33,6 +38,13 @@ public class StartActivity extends FragmentActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.start_activity_tab_layout);
         tabLayout.setupWithViewPager(viewPager);
 	}
+
+    private void initializeFbDataTracking() {
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        AppEventsLogger.activateApp(getApplication());
+
+        UserTracker.getInstance().startTracking();
+    }
 
 
 }
