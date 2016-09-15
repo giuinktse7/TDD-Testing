@@ -68,10 +68,6 @@ public class LoginFragment extends Fragment {
         Bundle args = new Bundle();
         args.putString(StartActivity.PAGE_TITLE, title);
         fragment.setArguments(args);
-
-        UserTracker.getInstance().addListener(fragment.hashCode(), UserEvent.LOGOUT, () -> {
-            LoginManager.getInstance().logOut();
-        });
         return fragment;
     }
 
