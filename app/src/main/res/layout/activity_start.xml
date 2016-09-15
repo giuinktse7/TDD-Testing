@@ -5,22 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.StartActivity"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    
-    <android.support.design.widget.TabLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/start_activity_tab_layout"
-        app:tabMode="scrollable"
-        android:background="@color/colorPrimary"
-        android:elevation="4dp"/>
+    tools:context=".activity.StartActivity">
 
-    <android.support.v4.view.ViewPager
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="1"
-        android:id="@+id/start_activity_view_pager"/>
+        android:layout_height="match_parent"
+        android:id="@+id/activity_start_fragment_holder">
+
+        <fragment class="com.learningtdd.fragment.LoginViewsFragment"
+                  android:id="@+id/select"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+            />
+    </FrameLayout>
 
 
 </LinearLayout>

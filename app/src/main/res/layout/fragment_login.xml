@@ -18,12 +18,11 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_huge"
+        android:layout_marginTop="180dp"
         android:layout_marginStart="@dimen/space_normal"
         android:layout_marginEnd="@dimen/space_normal"
         android:hint="@string/account_hint"
         android:id="@+id/fragment_login_txt_name"
-        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"/>
 
     <EditText
