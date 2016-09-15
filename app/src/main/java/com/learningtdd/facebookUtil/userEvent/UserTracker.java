@@ -4,6 +4,10 @@ import android.util.Log;
 
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.HttpMethod;
+import com.facebook.login.LoginManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,8 +40,14 @@ public class UserTracker {
                 @Override
                 protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
                     boolean isLogout = oldAccessToken != null && currentAccessToken == null;
-                    if (isLogout)
+                    if (isLogout) {
+                        new GraphRequest(oldAccessToken, "/me/permissions/",
+                                null, HttpMethod.DELETE, graphResponse ->
+                                LoginManager.getInstance().logOut()
+                        ).executeAsync();
+
                         notifyListeners(UserEvent.LOGOUT);
+                    }
                     else
                         notifyListeners(UserEvent.LOGIN);
                 }
