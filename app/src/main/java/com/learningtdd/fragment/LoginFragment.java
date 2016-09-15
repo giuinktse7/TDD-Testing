@@ -2,6 +2,7 @@ package com.learningtdd.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.UserManager;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.learningtdd.R;
@@ -67,10 +69,12 @@ public class LoginFragment extends Fragment {
         args.putString(StartActivity.PAGE_TITLE, title);
         fragment.setArguments(args);
 
-        UserTracker.getInstance().addListener(fragment.getId(), UserEvent.LOGIN, () -> Log.d("DEBUG", "Login registered!"));
-        UserTracker.getInstance().addListener(fragment.getId(), UserEvent.LOGOUT, () -> Log.d("DEBUG", "Logout registered!"));
+        UserTracker.getInstance().addListener(fragment.hashCode(), UserEvent.LOGOUT, () -> {
+            LoginManager.getInstance().logOut();
+        });
         return fragment;
     }
+
 
     private void onClickLogin(View view) {
         TextView txtPhrases = (TextView) view.findViewById(R.id.login_fragment_txt_progress_phrases);
@@ -88,7 +92,7 @@ public class LoginFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
 
-        UserTracker.getInstance().unsubscribe(this.getId());
+        UserTracker.getInstance().unsubscribe(this.hashCode());
     }
 
     @Override
