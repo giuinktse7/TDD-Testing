@@ -22,8 +22,8 @@ public class NewAccountFragment extends Fragment {
 		return view;
 	}
 
-	public static LoginFragment newInstance(String title) {
-		LoginFragment fragment = new LoginFragment();
+	public static NewAccountFragment newInstance(String title) {
+		NewAccountFragment fragment = new NewAccountFragment();
 		Bundle args = new Bundle();
 		args.putString(StartActivity.PAGE_TITLE, title);
 		fragment.setArguments(args);

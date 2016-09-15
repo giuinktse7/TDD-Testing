@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.learningtdd.R;
 
-public class DashBoardFragment extends Fragment {
+public class DashboardFragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -21,7 +21,7 @@ public class DashBoardFragment extends Fragment {
 		return view;
 	}
 
-	public static DashBoardFragment newInstance() {
-		return new DashBoardFragment();
+	public static DashboardFragment newInstance() {
+		return new DashboardFragment();
 	}
 }
