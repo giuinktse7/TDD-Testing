@@ -46,6 +46,9 @@ public class LoginFragment extends Fragment {
         btnFacebookLogin.setFragment(this);
         btnFacebookLogin.registerCallback(mCallbackManager, loginCallback);
 
+        UserTracker.getInstance().addListener(this.hashCode(), UserEvent.LOGIN, () -> btnFacebookLogin.setVisibility(View.INVISIBLE));
+        UserTracker.getInstance().addListener(this.hashCode(), UserEvent.LOGOUT, () -> btnFacebookLogin.setVisibility(View.VISIBLE));
+
 		return view;
 	}
 
@@ -68,6 +71,7 @@ public class LoginFragment extends Fragment {
         Bundle args = new Bundle();
         args.putString(StartActivity.PAGE_TITLE, title);
         fragment.setArguments(args);
+
         return fragment;
     }
 

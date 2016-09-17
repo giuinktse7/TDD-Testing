@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="60dp"
+              android:layout_marginTop="@dimen/space_normal">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/bulbasaur"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_marginStart="@dimen/space_normal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/conversation_name"
+            android:layout_marginTop="@dimen/space_normal"
+            android:textSize="@dimen/text_size_emphasize"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:text=""/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/conversation_latest_message"
+            android:textSize="@dimen/text_size_normal"
+            android:gravity="center_vertical"
+            android:text=""/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_normal"
+        android:id="@+id/conversation_time_of_message"
+        android:textSize="@dimen/text_size_normal"
+        android:textAllCaps="true"
+        android:layout_gravity="right|bottom"
+        android:layout_weight="0"
+        android:text="6:18PM"/>
+
+</LinearLayout>

@@ -12,11 +12,11 @@
         android:layout_height="match_parent"
         android:id="@+id/activity_start_fragment_holder">
 
-        <fragment class="com.learningtdd.fragment.LoginViewsFragment"
+        <!-- <fragment class="com.learningtdd.fragment.LoginViewsFragment"
                   android:id="@+id/select"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
-            />
+            /> -->
     </FrameLayout>
 
 

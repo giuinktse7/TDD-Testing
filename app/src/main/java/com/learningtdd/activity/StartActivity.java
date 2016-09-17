@@ -1,11 +1,12 @@
 package com.learningtdd.activity;
 
+import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
+import android.widget.FrameLayout;
 
-import com.facebook.AccessToken;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 import com.learningtdd.R;
@@ -13,21 +14,22 @@ import com.learningtdd.facebookUtil.userEvent.UserEvent;
 import com.learningtdd.facebookUtil.userEvent.UserTracker;
 import com.learningtdd.fragment.DashboardFragment;
 import com.learningtdd.fragment.LoginViewsFragment;
+import com.learningtdd.fragment.OptionsFragment;
 
 
 public class StartActivity extends FragmentActivity {
 
     public static final String PAGE_TITLE = "TITLE";
+    FrameLayout mFragmentHolder;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_start);
 
-        /*FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.activity_start_fragment_holder, LoginViewsFragment.newInstance());
-        transaction.addToBackStack(null);
-        transaction.commit();*/
+        mFragmentHolder = (FrameLayout) findViewById(R.id.activity_start_fragment_holder);
+
+        addFragment(LoginViewsFragment.newInstance());
 
 		initializeFbDataTracking();
 	}
@@ -38,12 +40,25 @@ public class StartActivity extends FragmentActivity {
 
         UserTracker.getInstance().startTracking();
 
-        UserTracker.getInstance().addListener(getTaskId(), UserEvent.LOGIN, () -> gotoDashboard());
+        UserTracker.getInstance().addListener(getTaskId(), UserEvent.LOGIN, () -> gotoFragment(new DashboardFragment()));
+        UserTracker.getInstance().addListener(getTaskId(), UserEvent.LOGOUT, () -> gotoFragment(new LoginViewsFragment()));
     }
 
-    private void gotoDashboard() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.activity_start_fragment_holder,
-                DashboardFragment.newInstance()).commit();
+    private void gotoFragment(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.activity_start_fragment_holder,
+                        fragment)
+                .commit();
+    }
+
+    private void addFragment(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.activity_start_fragment_holder,
+                        fragment)
+                .addToBackStack(null)
+                .commit();
     }
 
     @Override

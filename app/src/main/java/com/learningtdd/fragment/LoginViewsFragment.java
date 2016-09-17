@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.learningtdd.R;
-import com.learningtdd.adapter.StartPageAdapter;
+import com.learningtdd.adapter.ViewPagerFragmentAdapter;
 
 import java.util.Arrays;
 
@@ -23,7 +23,7 @@ public class LoginViewsFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_logins, container, false);
 
-        StartPageAdapter adapter = new StartPageAdapter(getActivity().getSupportFragmentManager(),
+        ViewPagerFragmentAdapter adapter = new ViewPagerFragmentAdapter(getChildFragmentManager(),
                 Arrays.asList(
                         LoginFragment.newInstance(getString(R.string.login)),
                         NewAccountFragment.newInstance(getString(R.string.new_account))

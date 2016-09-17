@@ -41,10 +41,10 @@ public class UserTracker {
                 protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
                     boolean isLogout = oldAccessToken != null && currentAccessToken == null;
                     if (isLogout) {
-                        new GraphRequest(oldAccessToken, "/me/permissions/",
+                        /*new GraphRequest(oldAccessToken, "/me/permissions/",
                                 null, HttpMethod.DELETE, graphResponse ->
                                 LoginManager.getInstance().logOut()
-                        ).executeAsync();
+                        ).executeAsync();*/
 
                         notifyListeners(UserEvent.LOGOUT);
                     }

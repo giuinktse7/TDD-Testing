@@ -1,0 +1,27 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+              android:orientation="vertical"
+             tools:context="fragment.LoginFragment"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_normal"
+            android:layout_marginStart="@dimen/space_normal"
+            android:layout_marginBottom="@dimen/space_normal"
+            android:text="@string/logout"
+            android:textSize="@dimen/text_size_emphasize"
+            android:id="@+id/fragment_options_logout"/>
+
+    </LinearLayout>
+
+
+</ScrollView>

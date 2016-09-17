@@ -4,6 +4,7 @@
 
     <!-- Login/Create Account -->
     <string name="login">Login</string>
+    <string name="logout">Log out</string>
     <string name="new_account">New Account</string>
     <string name="account_hint">Username</string>
     <string name="password_hint">Password</string>

@@ -1,5 +1,6 @@
 package com.learningtdd.adapter;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -8,13 +9,10 @@ import com.learningtdd.activity.StartActivity;
 
 import java.util.List;
 
-public class StartPageAdapter extends FragmentPagerAdapter {
-
-	private int mPos = 0;
-
+public class ViewPagerFragmentAdapter extends FragmentPagerAdapter {
 	private List<Fragment> mFragments;
 
-	public StartPageAdapter(FragmentManager fragmentManager, List<Fragment> fragments) {
+	public ViewPagerFragmentAdapter(FragmentManager fragmentManager, List<Fragment> fragments) {
 		super(fragmentManager);
         mFragments = fragments;
 	}
@@ -31,16 +29,8 @@ public class StartPageAdapter extends FragmentPagerAdapter {
 
 	@Override
 	public CharSequence getPageTitle(int position) {
-		setPos(position);
-
-		return mFragments.get(position).getArguments().getString(StartActivity.PAGE_TITLE);
-	}
-
-	public int getPos() {
-		return mPos;
-	}
-
-	public void setPos(int pos) {
-		mPos = pos;
+        Bundle args = mFragments.get(position).getArguments();
+        boolean hasTitle =  args != null;
+		return hasTitle ? args.getString(StartActivity.PAGE_TITLE) : "";
 	}
 }
